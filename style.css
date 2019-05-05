@@ -9,7 +9,9 @@
 }
 
 .fullscreen-bg__video {
- position: fixed;
+ 
+   padding-top: 0px; 
+    position: fixed;
   right: 0; 
   bottom: 0;
   min-width: 100%; 
