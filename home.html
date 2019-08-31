@@ -219,11 +219,13 @@ html {
 <body>
 
 	
-	<audio id="my_audio" src="Video/speech.mp3" loop=false></audio>
+	<audio id="my_audio" src="Video/speech.mp3"></audio>
 	
 	<script>
 	window.onload = function() {
     document.getElementById("my_audio").play();
+		
+    document.getElementById("my_audio").loop=false;
 }
 </script>
 
