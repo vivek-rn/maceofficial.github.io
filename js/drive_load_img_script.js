@@ -21,8 +21,8 @@ function read_value() {
 
          var x = document.createElement("IMG");
          x.setAttribute("src", imgname[i]);
-         x.setAttribute("width", "800");
-         x.setAttribute("height", "600");
+         x.setAttribute("width", "473");
+         x.setAttribute("height", "400");
          x.setAttribute("alt", "MACE_Img");
          var li = document.createElement("li");
          li.appendChild(x);
@@ -53,6 +53,7 @@ function read_value() {
              }, 5000);
          });
 
+         
          var slideCount = $('#slider ul li').length;
          var slideWidth = $('#slider ul li').width();
          var slideHeight = $('#slider ul li').height();
@@ -60,9 +61,9 @@ function read_value() {
 
          $('#slider').css({ width: slideWidth, height: slideHeight });
 
-         $('#slider ul').css({ width: sliderUlWidth, marginLeft: -slideWidth });
+         $('#slider ul').css({ width: sliderUlWidth, marginLeft: -slideWidth-352 });
 
-         $('#slider ul li:last-child').prependTo('#slider ul');
+         $('#slider ul li:last-child').prependTo('#slider ul');   
 
          function moveLeft() {
              $('#slider ul').animate({
