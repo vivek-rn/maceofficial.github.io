@@ -142,7 +142,7 @@ nav ul li a:hover {
 }
 
       .nav-wrapper {
-         position: fixed;
+            position  : fixed; 
             top: 0;
             left: 0;
             width: 100%;
@@ -220,7 +220,7 @@ nav ul li a:hover {
             cursor: pointer;
             z-index: 9999;
             border-radius: 50%;
-        background-color: rgba(0, 124, 255, 0.6);
+            background-color  : rgba(0, 124, 255, 0.6);
 
 
       }
@@ -251,6 +251,8 @@ nav ul li a:hover {
 #nav:checked + .nav-btn {
       transform: rotate(45deg);
 }
+
+
 
 #nav:checked + .nav-btn i {
       background: #000;
@@ -285,8 +287,15 @@ display: none;
 
 }
 
+#nav:checked ~ .nav-wrapper ul li a {
+      opacity: 1;
+      transform: translateX(0);
+
+
+}
+
 .hidden {
       display: none;
 }
-      
+
 }
