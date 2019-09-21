@@ -113,6 +113,11 @@ nav ul li a:hover {
   padding-bottom:0px;
 }
 
+#nav:not(:checked) {
+      display:none;
+
+}
+
 @media screen and (max-width: 864px) {
       .logo {
             padding: 0;
