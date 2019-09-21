@@ -269,6 +269,10 @@ nav ul li a:hover {
       opacity: 1;
 }
 
+#nav:not(:checked) ~ .nav-wrapper {
+display: none;
+}
+
 #nav:checked ~ .nav-wrapper ul li a {
       opacity: 1;
       transform: translateX(0);
