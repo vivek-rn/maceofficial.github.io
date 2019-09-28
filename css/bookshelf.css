@@ -11,6 +11,7 @@ textarea {
 body {
     font-size: 1em;
     line-height: 1.4;
+    background-image:url(../img/shelfbg.jpg);
 }
 
 /*
@@ -84,6 +85,7 @@ textarea {
    ========================================================================== */
 html, body {
     background: #333;
+    background-image:url(../img/shelfbg.jpg);
 }
 
 a, a:visited {
@@ -149,7 +151,9 @@ h1 {
   background-color:rgba(77, 205, 245, 1);
 }
 .shelf {
-    background: #DDD;
+    /*background-image:url(../img/shelfbg.jpg);*/
+    background: rgba(77, 77, 77, .9);
+    /*background: #DDD;*/
     overflow: auto;
     margin: 0 auto;
     width: auto;
@@ -158,9 +162,9 @@ h1 {
     padding: 10px 0px;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.6);
     position: relative;
-    background: -moz-linear-gradient(top,#EEE 0,#BBB 100%);
+    /*background: -moz-linear-gradient(top,#EEE 0,#BBB 100%);
     background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#EEE),color-stop(100%,#BBB));
-    background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#F5F5F5),color-stop(10%,#DDD),color-stop(90%,#BBB),color-stop(100%,#888));
+    background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#F5F5F5),color-stop(10%,#DDD),color-stop(90%,#BBB),color-stop(100%,#888));*/
 }
 .shelf:after {
     display: block;
@@ -191,12 +195,10 @@ h1 {
 }
 
 .shelf:nth-child(2).owned:before {
-    content: 'S1 & S2';
+    content: 'S1 & S2 [Notes+Syllabus]';
     opacity:.5px;
-    background-color:rgba(0, 0, 0, .5);
-    position : fixed;
-    top : 74px;
-    left : 135px;
+    background-color:rgba(0, 0, 0, 1);
+    position :static;
     z-index:100;
     font-size:50px;
 }
