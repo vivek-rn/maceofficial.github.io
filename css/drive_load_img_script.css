@@ -14,8 +14,8 @@ html, body {
 
 .imgslider_img 
 {
-    width:46vw;
-    height:44vh;
+    width:100%;
+    height:43vh;
 }
 
 h1 {
@@ -48,8 +48,8 @@ h1 {
   float: left;
   margin: 0;
   padding: 0;
-  width: 90%;
-  height: 200%;
+  width: 100%;
+  height: auto;
   background: #ccc;
   text-align: center;
   line-height: 300px;
