@@ -1,234 +1,638 @@
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="css/bookshelfnormalize.css">
+        <link rel="stylesheet" href="css/bookshelf.css">
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!--<meta name="viewport" content="width=1024">-->
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  
+        <!--Popup Box-->
 
+        <style>
+body {font-family: Arial, Helvetica, sans-serif;}
 
-<link rel="stylesheet" href="css/master.css">
-
-  <title>MACE Official</title>
-  <link rel = "icon" href =  "img/maceicon.ico" type = "image/x-icon"> 
-    <link rel="stylesheet" href="css/drive_load_img_script.css">
-  <script src="js/jquery.min.js"></script>
-  <script  src="js/drive_load_img_script.js"></script>
-
-<style>
-video { 
-
-//position: absolute; 
-
-top: 0; 
-
-left: 0; 
-
-width: 100%; 
-
-height: auto; 
-
-margin: 0px; 
-
-//min-width: 100%; 
-
-//min-height: 100%; 
-
-z-index: -1; 
-
-//object-position: center; 
-
-//object-fit: cover; 
-
-}
-</style>
-
-
-<!--text inside video-->
-
-<style>
-.container1 { 
-position:relative; 
-}
-.container1 video {
-    position:relative;
-    z-index:0;
-}
-.overlay {
-    position:absolute;
-    top:0;
-    left:0;
-    z-index:1;
-    width :100%;
-}
-</style>
-
-<!--Auto scroll top begin-->
-
-<style>
-
-html {
-  scroll-behavior: smooth;
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 200; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
-#myBtn {
-  display: none;
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  z-index: 99;
-  font-size: 88px;
-  border: none;
-  outline: none;
-  background-color: rgb(128,128,128,0.5);
-  width:100px;
-  height:100px;
-  color: white;
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
   cursor: pointer;
-  padding: 15px;
-  border-radius: 100px;
-}
-
-#myBtn:hover {
-  background-color:rgb(105,105,105,0.5);
 }
 </style>
 
-<!--Auto scroll top end-->
+        <!--Popup Box Ends-->
 
-</head>
-
-
-<body>
-
-	
-	<audio id="my_audio" src="Video/speech.mp3" type="audio/ogg"></audio>
-	
-	<script>
-	window.onload = function() {
-    document.getElementById("my_audio").play();
-		
-    document.getElementById("my_audio").loop=false;
-}
-</script>
-
-	
-<button onclick="topFunction()" id="myBtn" title="Go to top">^</button>
-
-<!--Auto Scroll Script Begins-->
-
-<script>
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    document.getElementById("myBtn").style.display = "block";
-  } else {
-    document.getElementById("myBtn").style.display = "none";
-  }
-}
-
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-}
-</script>
-
-<!--Auto Scroll Script Ends-->
-
-<div class="container1">
-
-
-    <video id="bgvideo" autoplay muted loop src="Video/MACE_Video.mp4"> </video>
-   
-   <img id="img1" src="img/macelogo1.png" alt="MACE" width="96" height="65">
-   
-   
-   
-    <div class="overlay">
-  
+          <style>
       
-      
-      <div class="container">
-
-
-            <nav>
-
-                  <input type="checkbox" id="nav" class="hidden">
-                  <label for="nav" class="nav-btn">
-                        <i></i>
-                        <i></i>
-                        <i></i>
-                  </label>
-                  <div class="logo">
-                        <a href="#"><img src="img/macelogo.png" alt="MACE" style="padding-top:5px;" width="75" height="55.5"><img src="img/macewrittern.png" alt="MACE" style="margin-bottom:1%" width="210" height="45.5"></a>
-                  </div>
-                  <div class="nav-wrapper">
-                        <ul>
-                              <li><a href="#">Home</a></li>
-                              <li><a href="#about">About</a></li>
-                              <li><a href="#slider">Gallery</a></li>
-                              <li><a href="#">Contact</a></li>
-                        </ul>
-                  </div>
-            </nav>
-      </div>
-      
+    .header 
+    {
+        margin-left:0%;
+        margin-right:0%;
         
+    }
+    .header img 
+    {
+        height:70%;
+        width:70%;
+        margin-left:15%;
+        margin-right:20%;
+        background-color :rgba(255,255,255,0.5);
+    }
+  </style>
+
+    </head>
+    <body>
+
+<div class="header">
+<a href="https://www.maceofficial.ml/">
+  <img src="img/maceheader1.png" alt="macelogo" />
+</a>
+
+<h1 id="headingtext">MACE VIRTUAL EDU ZONE</h1>
+</div>
+
+        <div class="shelf owned">
+            <ul class="books clearfix">
+                <li id="syllabuss1s2" class="book">
+
+                       <div class="bookcover red"><h2>S1 & S2</h2>   <br/>   <h2 style="color:black;">SYLLABUS</h2>  </div>
+
+                </li>
+                <li id="css3webdesigners" class="book">
+                   
+                    <div class="bookcover green"> <h2 style="color:maroon";>(MAT101)</h2>   <br/>   <h3 style="color:grey;">LINEAR ALGEBRA AND CALCULUS (S1)</h3> </div>
+
+                </li>
+                <li id="contentstrategy" class="book">
+                    
+                    <div class="bookcover blue"> <h2 style="color:maroon";>(MAT102)</h2><h4 style="color:white;">VECTOR CALCULUS,
+ DIFFERENTIAL EQUATIONS AND TRANSFORMS (S2)</h4> </div>
+
+                </li>
+                <li id="enggphysicsa" class="book">
+
+                    <div class="bookcover yellow"> <h2 style="color:maroon";>(PHT 100)</h2>   <br/>   <h3 style="color:grey;">ENGINEERING PHYSICS A</h3> </div>
+
+                    </li>
+                <li id="mobilefirst" class="book">
+
+                     <div class="bookcover grey"> <h2 style="color:maroon";>(PHT 110)</h2>   <br/>   <h3 style="color:white;">ENGINEERING PHYSICS B</h3> </div>
+
+                    </li>
+                <li id="enggchemistry" class="book new">
+
+                     <div class="bookcover lightblue"> <h2 style="color:white";>(CYT100)</h2>   <br/>   <h3 style="color:grey;">ENGINEERING CHEMISTRY</h3> </div>
+
+                </li>
+
+                <li id="Li1" class="book">
+
+                       <div class="bookcover red"> <h2 style="color:maroon";>(EST100)</h2>   <br/>   <h3 style="color:white;">ENGINEERING MECHANICS</h3>  </div>
+
+                </li>
+                <li id="engggraphics" class="book">
+                   
+                    <div class="bookcover green"> <h2 style="color:maroon";>(EST110)</h2>   <br/>   <h3 style="color:grey;">ENGINEERING GRAPHICS</h3> </div>
+
+                </li>
+                <li id="Li3" class="book">
+                    
+                    <div class="bookcover blue"> <h2 style="color:maroon";>(EST120)</h2><h4 style="color:white;">BASICS OF CIVIL &
+MECHANICAL ENGINEERING</h4> </div>
+
+                </li>
+                <li id="Li4" class="book">
+
+                    <div class="bookcover yellow"> <h2 style="color:maroon";>(EST130)</h2>   <br/>   <h4 style="color:grey;">BASICS OF ELECTRICAL &
+ELECTRONICS ENGINEERING</h4> </div>
+
+                    </li>
+                <li id="Li5" class="book">
+
+                     <div class="bookcover grey"> <h2 style="color:maroon";>(HUT101)</h2>   <br/>   <h3 style="color:white;">LIFE SKILLS (S1)</h3> </div>
+
+                    </li>
+                <li id="Li6" class="book new">
+
+                     <div class="bookcover lightblue"> <h2 style="color:white";>(HUT102)</h2>   <br/>   <h4 style="color:grey;">PROFESSIONAL COMMUNICATION (S2)</h4> </div>
+
+                </li>
+
+                                <li id="Li7" class="book">
+
+                       <div class="bookcover red"> <h2 style="color:maroon";>(EST102)</h2>   <br/>   <h4 style="color:white;">PROGRAMMING IN C (S2)</h4>  </div>
+
+                </li>
+                <li id="Li8" class="book">
+                   
+                    <div class="bookcover green"> <h2 style="color:maroon";>(PHL120)</h2>   <br/>   <h3 style="color:grey;">ENGINEERING PHYSICS LAB</h3> </div>
+
+                </li>
+                <li id="Li9" class="book">
+                    
+                    <div class="bookcover blue"> <h2 style="color:maroon";>(CYL120)</h2><h4 style="color:white;">ENGINEERING CHEMISTRY LAB</h4> </div>
+
+                </li>
+                <li id="Li10" class="book">
+
+                    <div class="bookcover yellow"> <h2 style="color:maroon";>(ESL120)</h2>   <br/>   <h4 style="color:grey;">CIVIL & MECHANICAL
+WORKSHOP</h4> </div>
+
+                    </li>
+                <li id="Li11" class="book">
+
+                     <div class="bookcover grey"> <h2 style="color:maroon";>(ESL130)</h2>   <br/>   <h3 style="color:white;">ELECTRICAL & ELECTRONICS
+WORKSHOP</h3> </div>
+
+                    </li>
+            </ul>
+        </div>
+
+
+
+         <!--       <footer class="center justify">
+            <p>
+                <a href="https://www.maceofficial.ml/">Read more about this on MACE official website</a>.
+            </p>
+            <h1>
+                A special thanks to all the students of MACE and S7 CSE Students 2016-2020 Batch and all Staffs and other members of Malabar College who cooperated for making this website.
+            </h1>
+            
+                <p>
+                    If you have any doubts or innovative idea regarding the Webpage feel free to ask  at Department of Computer Science Staffs or Students.
+                </p>
+                
+                 <p>
+                    The Webpage is devloped by <a href="https://vivekrn.cf/">CLICK ME</a>
+                </p>
+            
+            
+        </footer>-->
+        <footer class="center justify">
+            <p>
+                <a href="https://www.maceofficial.ml/">Read more about this on MACE official website</a>.
+            </p>
+
+            <p><h2>
+                 A special thanks to all the students of MACE and S7 CSE Students 2016-2020 Batch and all Staffs and other members of Malabar College who cooperated for making this website.
+            </h2></p>
+
+            <p><b><i>
+                    If you have any doubts or innovative idea regarding the Webpage feel free to ask  at Department of Computer Science Staffs or Students.
+            </i></b></p>
+            <br/><br/>
+            <p>
+                MACE 2020 Ⓒ | All rights reserved | The Webpage is Devloped by <a href="https://vivekrn.cf/">CLICK HERE</a>
+            </p>
+            
+        </footer>
+        
+        <!-- The Modal -->
+<div id="s1s2syllabus" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+        <table class="tablepopup" border="1" cellpadding="2" cellspacing="2" style="text-align: left; width: 100%;">
+<tbody>
+<tr>
+<td style="font-weight: bold; text-align: center; vertical-align: top;">SLOT</td>
+<td style="font-weight: bold; text-align: center; vertical-align: top;">CREDIT</td>
+<td style="font-weight: bold; text-align: center; vertical-align: top;">CODE</td>
+<td style="font-weight: bold; text-align: center; vertical-align: top;">NAME</td>
+<td style="font-weight: bold; text-align: center; vertical-align: top;">SYLLABUS</td>
+</tr>
+<tr>
+<td style="text-align: center; vertical-align: top; width: 70px;">A</td>
+<td style="text-align: center; vertical-align: top; width: 86px;">4</td>
+<td style="text-align: center; vertical-align: top; width: 105px;">MAT101</td>
+<td style="text-align: center; vertical-align: top; width: 521px;">LINEAR
+ALGEBRA AND CALCULUS (S1)</td>
+<td style="text-align: center; vertical-align: top; width: 469px;"><a href="https://drive.google.com/open?id=1oK6-Z_oFMoVaxcQQOlVbdHCzvyHzAGMt" target="_blank">Download</a></td>
+</tr>
+<tr>
+<td style="text-align: center; vertical-align: top; width: 70px;">A</td>
+<td style="text-align: center; vertical-align: top; width: 86px;">4</td>
+<td style="text-align: center; vertical-align: top; width: 105px;">MAT102</td>
+<td style="text-align: center; vertical-align: top; width: 521px;">VECTOR CALCULUS,<br />
+&nbsp;DIFFERENTIAL
+EQUATIONS AND TRANSFORMS (S2)</td>
+<td style="text-align: center; vertical-align: top; width: 469px;"><!--<a href="https://drive.google.com/open?id=1csfZ9-R7kPdmrayEBtXWbOx6qLLTS4RG" target="_blank">Download</a>--></td>
+</tr>
+<tr>
+<td style="text-align: center; vertical-align: top; width: 70px;">B</td>
+<td style="text-align: center; vertical-align: top; width: 86px;">4</td>
+<td style="text-align: center; vertical-align: top; width: 105px;">PHT
+100 </td>
+<td style="text-align: center; vertical-align: top; width: 521px;">ENGINEERING
+PHYSICS A </td>
+<td style="text-align: center; vertical-align: top; width: 469px;"><a href="https://drive.google.com/open?id=1cQQ007ztE1dbR3uA8QRv9LphIWqqLdX_" target="_blank">Download</a></td>
+</tr>
+<tr>
+<td style="text-align: center; vertical-align: top; width: 70px;">B</td>
+<td style="text-align: center; vertical-align: top; width: 86px;">4</td>
+<td style="text-align: center; vertical-align: top; width: 105px;">PHT
+110 </td>
+<td style="text-align: center; vertical-align: top; width: 521px;">ENGINEERING
+PHYSICS B </td>
+<td style="text-align: center; vertical-align: top; width: 469px;"><!--<a href="https://drive.google.com/open?id=1t7KuZzJjdyq4hzFaA5AqKAP20cmtuXwt" target="_blank">Download</a>--></td>
+</tr>
+<tr>
+<td style="text-align: center; vertical-align: top; width: 70px;">B</td>
+<td style="text-align: center; vertical-align: top; width: 86px;">4</td>
+<td style="text-align: center; vertical-align: top; width: 105px;">CYT100</td>
+<td style="text-align: center; vertical-align: top; width: 521px;">ENGINEERING
+CHEMISTRY </td>
+<td style="text-align: center; vertical-align: top; width: 469px;"><a href="https://drive.google.com/open?id=1X0xaSdvsu1VU_mFcDiKU6nlSXlyGnBfQ" target="_blank">Download</a></td>
+</tr>
+<tr>
+<td style="text-align: center; vertical-align: top; width: 70px;">C</td>
+<td style="text-align: center; vertical-align: top; width: 86px;">3</td>
+<td style="text-align: center; vertical-align: top; width: 105px;">EST100</td>
+<td style="text-align: center; vertical-align: top; width: 521px;">ENGINEERING
+MECHANICS </td>
+<td style="text-align: center; vertical-align: top; width: 469px;"><a href="https://drive.google.com/open?id=1yF32Pk7kaYIuQ80ZK3J09LomvWqt_tbE" target="_blank">Download</a></td>
+</tr>
+<tr>
+<td style="text-align: center; vertical-align: top; width: 70px;">C</td>
+<td style="text-align: center; vertical-align: top; width: 86px;">3</td>
+<td style="text-align: center; vertical-align: top; width: 105px;">EST110</td>
+<td style="text-align: center; vertical-align: top; width: 521px;">ENGINEERING
+GRAPHICS </td>
+<td style="text-align: center; vertical-align: top; width: 469px;"><a href="https://drive.google.com/open?id=1gCg5imY_S8V8h_Yc4GORRbnoUJcvt0Ok" target="_blank">Download</a></td>
+</tr>
+<tr>
+<td style="text-align: center; vertical-align: top; width: 70px;">D</td>
+<td style="text-align: center; vertical-align: top; width: 86px;">4</td>
+<td style="text-align: center; vertical-align: top; width: 105px;">EST120</td>
+<td style="text-align: center; vertical-align: top; width: 521px;">BASICS
+OF CIVIL &amp;<br />
+MECHANICAL ENGINEERING</td>
+<td style="text-align: center; vertical-align: top; width: 469px;"><a href="https://drive.google.com/open?id=1P58ZSBJ1v_nH2Wz4Rvpt0V0CeNwxIQzK" target="_blank">Download</a></td>
+</tr>
+<tr>
+<td style="text-align: center; vertical-align: top; width: 70px;">D</td>
+<td style="text-align: center; vertical-align: top; width: 86px;">4</td>
+<td style="text-align: center; vertical-align: top; width: 105px;">EST130</td>
+<td style="text-align: center; vertical-align: top; width: 521px;">BASICS
+OF ELECTRICAL &amp;<br />
+ELECTRONICS ENGINEERING</td>
+<td style="text-align: center; vertical-align: top; width: 469px;"><a href="https://drive.google.com/open?id=1mPnsgh2skXn0G1dEPUMziyWtdR9d-C1c" target="_blank">Download</a></td>
+</tr>
+<tr>
+<td style="text-align: center; vertical-align: top; width: 70px;">E</td>
+<td style="text-align: center; vertical-align: top; width: 86px;">-</td>
+<td style="text-align: center; vertical-align: top; width: 105px;">HUT101</td>
+<td style="text-align: center; vertical-align: top; width: 521px;">LIFE
+SKILLS (S1)</td>
+<td style="text-align: center; vertical-align: top; width: 469px;"><a href="https://drive.google.com/open?id=1TW8Oom_g35qfEgoygp-7qx3LnoPwIxcj" target="_blank">Download</a></td>
+</tr>
+<tr>
+<td style="text-align: center; vertical-align: top; width: 70px;">E
+</td>
+<td style="text-align: center; vertical-align: top; width: 86px;">-</td>
+<td style="text-align: center; vertical-align: top; width: 105px;">HUT102</td>
+<td style="text-align: center; vertical-align: top; width: 521px;">PROFESSIONAL
+COMMUNICATION (S2) </td>
+<td style="text-align: center; vertical-align: top; width: 469px;"><!--<a href="https://drive.google.com/open?id=1XztJRke2bnguNSUO5JHtS_GWRTuxywa0" target="_blank">Download</a>--></td>
+</tr>
+<tr>
+<td style="text-align: center; vertical-align: top; width: 70px;">F</td>
+<td style="text-align: center; vertical-align: top; width: 86px;">4</td>
+<td style="text-align: center; vertical-align: top; width: 105px;">EST102</td>
+<td style="text-align: center; vertical-align: top; width: 521px;">PROGRAMMING
+IN C (S2) </td>
+<td style="text-align: center; vertical-align: top; width: 469px;"><!--<a href="https://drive.google.com/open?id=1TgW68b9wgJQXbf95LsZO7elbYSpavuhB" target="_blank">Download</a>--></td>
+</tr>
+<tr>
+<td style="text-align: center; vertical-align: top; width: 70px;">S</td>
+<td style="text-align: center; vertical-align: top; width: 86px;">1</td>
+<td style="text-align: center; vertical-align: top; width: 105px;">PHL120</td>
+<td style="text-align: center; vertical-align: top; width: 521px;">ENGINEERING
+PHYSICS LAB </td>
+<td style="text-align: center; vertical-align: top; width: 469px;"><!--<a href="https://drive.google.com/open?id=1YqzGC_fHEB7ZnH1meds5d2guoCyNuLRH" target="_blank">Download</a>--></td>
+</tr>
+<tr>
+<td style="text-align: center; vertical-align: top; width: 70px;">S</td>
+<td style="text-align: center; vertical-align: top; width: 86px;">1</td>
+<td style="text-align: center; vertical-align: top; width: 105px;">CYL120</td>
+<td style="text-align: center; vertical-align: top; width: 521px;">ENGINEERING
+CHEMISTRY LAB </td>
+<td style="text-align: center; vertical-align: top; width: 469px;"><!--<a href="https://drive.google.com/open?id=1-0adBb4YblSdLTIDoL4wlvhQqv1UsoCz" target="_blank">Download</a>--></td>
+</tr>
+<tr>
+<td style="text-align: center; vertical-align: top; width: 70px;">T</td>
+<td style="text-align: center; vertical-align: top; width: 86px;">1</td>
+<td style="text-align: center; vertical-align: top; width: 105px;">ESL120</td>
+<td style="text-align: center; vertical-align: top; width: 521px;">CIVIL
+&amp; MECHANICAL<br />
+WORKSHOP </td>
+<td style="text-align: center; vertical-align: top; width: 469px;"><!--<a href="https://drive.google.com/open?id=11ytaiF8jM5zzZAlLHPKhEo7igF0Qwwku" target="_blank">Download</a>--></td>
+</tr>
+<tr>
+<td style="text-align: center; vertical-align: top; width: 70px;">T</td>
+<td style="text-align: center; vertical-align: top; width: 86px;">1</td>
+<td style="text-align: center; vertical-align: top; width: 105px;">ESL130</td>
+<td style="text-align: center; vertical-align: top; width: 521px;">ELECTRICAL
+&amp; ELECTRONICS<br />
+WORKSHOP </td>
+<td style="text-align: center; vertical-align: top; width: 469px;"><!--<a href="https://drive.google.com/open?id=1Jm7l1NIzrT8FQLkY46kLYCdvkd0o6PLw" target="_blank">Download</a>--></td>
+</tr>
+</tbody>
+</table>
   </div>
 </div>
 
-<div id="slider">
-  <ul id="image_slider">
-  </ul>  
+<div id="graphicsengg" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+        <table class="tablepopup" border="1" cellpadding="2" cellspacing="2" style="text-align: left; width: 100%;">
+<tbody>
+<tr>
+<td style="font-weight: bold; text-align: center; vertical-align: top;">MODULE</td>
+<td style="font-weight: bold; text-align: center; vertical-align: top;">NAME</td>
+<td style="font-weight: bold; text-align: center; vertical-align: top;">SYLLABUS</td>
+</tr>
+<tr>
+<td style="text-align: center; vertical-align: top; width: 105px;">1</td>
+<td style="text-align: center; vertical-align: top; width: 521px;">ENGINEERING GRAPHICS</td>
+<td style="text-align: center; vertical-align: top; width: 469px;"><a href="https://drive.google.com/open?id=1gLtU-qWQW4Hixj3WBbMjAs6z737XXxnU" target="_blank">Download</a></td>
+</tr>
+<tr>
+<td style="text-align: center; vertical-align: top; width: 105px;">2</td>
+<td style="text-align: center; vertical-align: top; width: 521px;">ENGINEERING GRAPHICS</td>
+<td style="text-align: center; vertical-align: top; width: 469px;"><a href="https://drive.google.com/open?id=1Wx-VXBU6yKHhHasorzQ73YauyFDbY0Il" target="_blank">Download</a></td>
+</tr>
+<tr>
+<td style="text-align: center; vertical-align: top; width: 105px;">3</td>
+<td style="text-align: center; vertical-align: top; width: 521px;">ENGINEERING GRAPHICS</td>
+<td style="text-align: center; vertical-align: top; width: 469px;"><a href="https://drive.google.com/open?id=1RFuJqjt8041UymkBWvPrLrjt-E1Ynvhb" target="_blank">Download</a></td>
+</tr>
+<tr>
+<td style="text-align: center; vertical-align: top; width: 105px;">4</td>
+<td style="text-align: center; vertical-align: top; width: 521px;">ENGINEERING GRAPHICS</td>
+<td style="text-align: center; vertical-align: top; width: 469px;"><a href="https://drive.google.com/open?id=1jfar5xEWXdguuXvpaF6dmTRAfpmhlBM3" target="_blank">Download</a></td>
+</tr>
+<tr>
+<td style="text-align: center; vertical-align: top; width: 105px;">5</td>
+<td style="text-align: center; vertical-align: top; width: 521px;">ENGINEERING GRAPHICS</td>
+<td style="text-align: center; vertical-align: top; width: 469px;"><a href="https://drive.google.com/open?id=1bz1k7bCisaSh4BaiuiEEq9BV3zlgEs9m" target="_blank">Download</a></td>
+</tr>
+
+</tbody>
+</table>
 </div>
-    
+</div>
 
-<a href="/bookshelf.html">BOOKSHELF (A MACE VIRTUAL EDU ZONE)</a>
+<div id="physicsa" class="modal">
 
-<p>
-What is Lorem Ipsum?
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+        <table class="tablepopup" border="1" cellpadding="2" cellspacing="2" style="text-align: left; width: 100%;">
+<tbody>
+<tr>
+<td style="font-weight: bold; text-align: center; vertical-align: top;">MODULE</td>
+<td style="font-weight: bold; text-align: center; vertical-align: top;">NAME</td>
+<td style="font-weight: bold; text-align: center; vertical-align: top;">SYLLABUS</td>
+</tr>
+<tr>
+<td style="text-align: center; vertical-align: top; width: 105px;">1</td>
+<td style="text-align: center; vertical-align: top; width: 521px;">ENGINEERING PHYSICS A</td>
+<td style="text-align: center; vertical-align: top; width: 469px;"><a href="https://drive.google.com/open?id=1fbe7D17bsHOJKSH2pipz999-khwmgzOj" target="_blank">Download</a></td>
+</tr>
+<tr>
+<td style="text-align: center; vertical-align: top; width: 105px;">2</td>
+<td style="text-align: center; vertical-align: top; width: 521px;">ENGINEERING PHYSICS A</td>
+<td style="text-align: center; vertical-align: top; width: 469px;"><a href="https://drive.google.com/open?id=1P3ApzyrHar_J8m8EH5ZO4Ds8x4PZgHlb" target="_blank">Download</a></td>
+</tr>
+<tr>
+<td style="text-align: center; vertical-align: top; width: 105px;">3</td>
+<td style="text-align: center; vertical-align: top; width: 521px;">ENGINEERING PHYSICS A</td>
+<td style="text-align: center; vertical-align: top; width: 469px;"><!--<a href="https://drive.google.com/open?id= " target="_blank">Download</a>--></td>
+</tr>
+<tr>
+<td style="text-align: center; vertical-align: top; width: 105px;">4</td>
+<td style="text-align: center; vertical-align: top; width: 521px;">ENGINEERING PHYSICS A</td>
+<td style="text-align: center; vertical-align: top; width: 469px;"><!--<a href="https://drive.google.com/open?id= " target="_blank">Download</a>--></td>
+</tr>
+<tr>
+<td style="text-align: center; vertical-align: top; width: 105px;">5</td>
+<td style="text-align: center; vertical-align: top; width: 521px;">ENGINEERING PHYSICS A</td>
+<td style="text-align: center; vertical-align: top; width: 469px;"><!--<a href="https://drive.google.com/open?id= " target="_blank">Download</a>--></td>
+</tr>
 
-Why do we use it?
-It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="chemistry" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+        <table class="tablepopup" border="1" cellpadding="2" cellspacing="2" style="text-align: left; width: 100%;">
+<tbody>
+<tr>
+<td style="font-weight: bold; text-align: center; vertical-align: top;">MODULE</td>
+<td style="font-weight: bold; text-align: center; vertical-align: top;">NAME</td>
+<td style="font-weight: bold; text-align: center; vertical-align: top;">SYLLABUS</td>
+</tr>
+<tr>
+<td style="text-align: center; vertical-align: top; width: 105px;">1</td>
+<td style="text-align: center; vertical-align: top; width: 521px;">ENGINEERING CHEMISTRY</td>
+<td style="text-align: center; vertical-align: top; width: 469px;"><a href="https://drive.google.com/open?id=11FIbqIQQwBaS7dtcSmJKJrM3QN7T7f3D" target="_blank">Download</a></td>
+</tr>
+<tr>
+<td style="text-align: center; vertical-align: top; width: 105px;">2</td>
+<td style="text-align: center; vertical-align: top; width: 521px;">ENGINEERING CHEMISTRY</td>
+<td style="text-align: center; vertical-align: top; width: 469px;"><!--<a href="https://drive.google.com/open?id= " target="_blank">Download</a>--></td>
+</tr>
+<tr>
+<td style="text-align: center; vertical-align: top; width: 105px;">3</td>
+<td style="text-align: center; vertical-align: top; width: 521px;">ENGINEERING CHEMISTRY</td>
+<td style="text-align: center; vertical-align: top; width: 469px;"><!--<a href="https://drive.google.com/open?id= " target="_blank">Download</a>--></td>
+</tr>
+<tr>
+<td style="text-align: center; vertical-align: top; width: 105px;">4</td>
+<td style="text-align: center; vertical-align: top; width: 521px;">ENGINEERING CHEMISTRY</td>
+<td style="text-align: center; vertical-align: top; width: 469px;"><!--<a href="https://drive.google.com/open?id= " target="_blank">Download</a>--></td>
+</tr>
+<tr>
+<td style="text-align: center; vertical-align: top; width: 105px;">5</td>
+<td style="text-align: center; vertical-align: top; width: 521px;">ENGINEERING CHEMISTRY</td>
+<td style="text-align: center; vertical-align: top; width: 469px;"><a href="https://drive.google.com/open?id=1AVUkYBv97iDjtyRqZEP8YRRY0u2cLgsX" target="_blank">Download</a></td>
+</tr>
+
+</tbody>
+</table>
+</div>
+</div>
 
 
-Where does it come from?
-Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-
-The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
-
-Where can I get some?
-There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
-
-5
-	paragraphs
-	words
-	bytes
-	lists
-	Start with 'Lorem
-ipsum dolor sit amet...'
-What is Lorem Ipsum?
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-
-</p>
+        <script>
 
 
+        /**/
+            // Get the modal
+            var modal = document.getElementById("s1s2syllabus");
 
-  <!--Top-->
+            // Get the button that opens the modal
+            var btn = document.getElementById("syllabuss1s2");
 
-  
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
 
+            // When the user clicks the button, open the modal 
+            btn.onclick = function () {
+                modal.style.display = "block";
+            }
 
-<script  src="js/topindex.js">
-</script>
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function () {
+                modal.style.display = "none";
+            }
 
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
 
+            /**/
 
-</body>
+            /**/
+            // Get the modal
+            var modal1 = document.getElementById("graphicsengg");
+
+            // Get the button that opens the modal
+            var btn1 = document.getElementById("engggraphics");
+
+            // Get the <span> element that closes the modal
+            var span1 = document.getElementsByClassName("close")[1];
+
+            // When the user clicks the button, open the modal 
+            btn1.onclick = function () {
+                modal1.style.display = "block";
+            }
+
+            // When the user clicks on <span> (x), close the modal
+            span1.onclick = function () {
+                modal1.style.display = "none";
+            }
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function (event) {
+                if (event.target == modal1) {
+                    modal1.style.display = "none";
+                }
+            }
+
+            /**/
+
+            /**/
+            // Get the modal
+            var modal2 = document.getElementById("physicsa");
+
+            // Get the button that opens the modal
+            var btn2 = document.getElementById("enggphysicsa");
+
+            // Get the <span> element that closes the modal
+            var span2 = document.getElementsByClassName("close")[2];
+
+            // When the user clicks the button, open the modal 
+            btn2.onclick = function () {
+                modal2.style.display = "block";
+            }
+
+            // When the user clicks on <span> (x), close the modal
+            span2.onclick = function () {
+                modal2.style.display = "none";
+            }
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function (event) {
+                if (event.target == modal2) {
+                    modal2.style.display = "none";
+                }
+            }
+
+            /**/
+
+            /**/
+            // Get the modal
+            var modal3 = document.getElementById("chemistry");
+
+            // Get the button that opens the modal
+            var btn3 = document.getElementById("enggchemistry");
+
+            // Get the <span> element that closes the modal
+            var span3 = document.getElementsByClassName("close")[3];
+
+            // When the user clicks the button, open the modal 
+            btn3.onclick = function () {
+                modal3.style.display = "block";
+            }
+
+            // When the user clicks on <span> (x), close the modal
+            span3.onclick = function () {
+                modal3.style.display = "none";
+            }
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function (event) {
+                if (event.target == modal3) {
+                    modal3.style.display = "none";
+                }
+            }
+
+            /**/
+
+        </script>
+
+    </body>
+
 </html>
+
