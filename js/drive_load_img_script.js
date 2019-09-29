@@ -21,9 +21,10 @@ function read_value() {
 
          var x = document.createElement("IMG");
          x.setAttribute("src", imgname[i]);
-         x.setAttribute("width", "473");
-         x.setAttribute("height", "400");
+         //x.setAttribute("width", "760");
+         //x.setAttribute("height", "400");
          x.setAttribute("alt", "MACE_Img");
+         x.className = "imgslider_img";
          var li = document.createElement("li");
          li.appendChild(x);
          var ul = document.getElementById("image_slider")
@@ -53,17 +54,16 @@ function read_value() {
              }, 5000);
          });
 
-         
          var slideCount = $('#slider ul li').length;
          var slideWidth = $('#slider ul li').width();
          var slideHeight = $('#slider ul li').height();
          var sliderUlWidth = slideCount * slideWidth;
 
-         $('#slider').css({ width: slideWidth, height: slideHeight });
+        // $('#slider').css({ width: slideWidth, height: slideHeight });
 
-         $('#slider ul').css({ width: sliderUlWidth, marginLeft: -slideWidth-460 });
+        // $('#slider ul').css({ width: sliderUlWidth, marginLeft: -slideWidth - slideCount });
 
-         $('#slider ul li:last-child').prependTo('#slider ul');   
+         $('#slider ul li:last-child').prependTo('#slider ul');
 
          function moveLeft() {
              $('#slider ul').animate({
