@@ -61,7 +61,7 @@ function read_value() {
 
          $('#slider').css({ width: slideWidth, height: slideHeight });
 
-         $('#slider ul').css({ width: sliderUlWidth, marginLeft: -slideWidth-352 });
+         $('#slider ul').css({ width: sliderUlWidth, marginLeft: -slideWidth-460 });
 
          $('#slider ul li:last-child').prependTo('#slider ul');   
 
