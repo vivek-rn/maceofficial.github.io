@@ -34,7 +34,7 @@
 
 /* opening the curtain */
 #curtain {
-  z-index: 300;
+  z-index: 3000;
   background: url("https://github.com/virn1101/test.github.io/blob/master/curtain.gif?raw=true") no-repeat;
   background-size: 100%;
   -webkit-animation: curtain 300s linear 1s;
