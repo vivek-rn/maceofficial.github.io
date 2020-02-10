@@ -13,8 +13,8 @@
 #fireworks
 {
     z-index: 5000;
-    background: url("https://github.com/virn1101/maceofficial.github.io/blob/master/fireworks.gif?raw=true") no-repeat;
-background-size: 100%;
+      height: auto;
+    width: 100%;
 }
 #fireworks img
 { 
