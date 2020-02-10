@@ -1,0 +1,43 @@
+
+
+.box {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+}
+
+
+ /* keyframe for opening the curtain */
+@-webkit-keyframes curtain {
+  from {
+    top: 0;
+    left: 0;
+  }
+  to { 
+    left: 0;
+    top: -1000%;
+  }
+}
+
+@keyframes curtain {
+  from {
+    top: 0;
+    left: 0;
+  }
+  to { 
+    left: 0;
+    top: -1000%;
+  }
+}
+
+/* opening the curtain */
+#curtain {
+  z-index: 300;
+  background: url("https://github.com/virn1101/test.github.io/blob/master/curtain.gif?raw=true") no-repeat;
+  background-size: 100%;
+  -webkit-animation: curtain 300s linear 1s;
+  animation: curtain 300s linear 1s;
+}
+
